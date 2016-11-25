@@ -1,8 +1,8 @@
 package com.github.ltsopensource.nio;
 
 import com.github.ltsopensource.core.json.JSON;
-import com.github.ltsopensource.core.logger.Logger;
-import com.github.ltsopensource.core.logger.LoggerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import com.github.ltsopensource.nio.channel.NioChannel;
 import com.github.ltsopensource.nio.handler.IoFutureListener;
 import com.github.ltsopensource.nio.handler.NioHandler;

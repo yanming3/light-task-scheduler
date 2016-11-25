@@ -4,8 +4,8 @@ import com.github.ltsopensource.core.AppContext;
 import com.github.ltsopensource.core.cluster.Node;
 import com.github.ltsopensource.core.commons.concurrent.ConcurrentHashSet;
 import com.github.ltsopensource.core.commons.utils.CollectionUtils;
-import com.github.ltsopensource.core.logger.Logger;
-import com.github.ltsopensource.core.logger.LoggerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;

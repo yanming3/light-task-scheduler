@@ -5,8 +5,8 @@ import com.github.ltsopensource.core.commons.utils.QuietUtils;
 import com.github.ltsopensource.core.domain.Job;
 import com.github.ltsopensource.core.factory.NamedThreadFactory;
 import com.github.ltsopensource.core.json.JSON;
-import com.github.ltsopensource.core.logger.Logger;
-import com.github.ltsopensource.core.logger.LoggerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import com.github.ltsopensource.jobclient.JobClient;
 import com.github.ltsopensource.jobclient.JobClientBuilder;
 import com.github.ltsopensource.core.properties.JobClientProperties;
@@ -55,7 +55,7 @@ class QuartzLTSProxyAgent {
                     QuietUtils.sleep(3000);
                     startProxy0();
                 } catch (Throwable t) {
-                    LOGGER.error("Error on start " + QuartzLTSProxyAgent.class.getSimpleName(), t);
+                    LOGGER.error("Error on starter " + QuartzLTSProxyAgent.class.getSimpleName(), t);
                 }
             }
         }).start();
@@ -108,7 +108,7 @@ class QuartzLTSProxyAgent {
                 jobs.add(buildSimpleJob(quartzJobContext));
             }
         }
-        LOGGER.info("=============LTS=========== Submit start");
+        LOGGER.info("=============LTS=========== Submit starter");
         submitJobs0(jobClient, jobs);
         LOGGER.info("=============LTS=========== Submit end");
     }

@@ -5,8 +5,8 @@ import com.github.ltsopensource.biz.logger.domain.JobLogPo;
 import com.github.ltsopensource.biz.logger.domain.JobLoggerRequest;
 import com.github.ltsopensource.core.json.JSON;
 import com.github.ltsopensource.admin.response.PaginationRsp;
-import com.github.ltsopensource.core.logger.Logger;
-import com.github.ltsopensource.core.logger.LoggerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 

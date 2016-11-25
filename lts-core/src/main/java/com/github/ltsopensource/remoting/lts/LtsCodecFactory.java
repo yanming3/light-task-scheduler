@@ -1,7 +1,7 @@
 package com.github.ltsopensource.remoting.lts;
 
-import com.github.ltsopensource.core.logger.Logger;
-import com.github.ltsopensource.core.logger.LoggerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import com.github.ltsopensource.nio.channel.NioChannel;
 import com.github.ltsopensource.nio.codec.Decoder;
 import com.github.ltsopensource.nio.codec.Encoder;

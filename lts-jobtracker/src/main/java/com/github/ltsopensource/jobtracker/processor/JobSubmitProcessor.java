@@ -1,8 +1,8 @@
 package com.github.ltsopensource.jobtracker.processor;
 
 import com.github.ltsopensource.core.exception.JobReceiveException;
-import com.github.ltsopensource.core.logger.Logger;
-import com.github.ltsopensource.core.logger.LoggerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import com.github.ltsopensource.core.protocol.JobProtos;
 import com.github.ltsopensource.core.protocol.command.JobSubmitRequest;
 import com.github.ltsopensource.core.protocol.command.JobSubmitResponse;

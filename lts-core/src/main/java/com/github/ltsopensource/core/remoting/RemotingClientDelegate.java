@@ -6,8 +6,8 @@ import com.github.ltsopensource.core.constant.EcTopic;
 import com.github.ltsopensource.core.constant.ExtConfig;
 import com.github.ltsopensource.core.exception.JobTrackerNotFoundException;
 import com.github.ltsopensource.core.loadbalance.LoadBalance;
-import com.github.ltsopensource.core.logger.Logger;
-import com.github.ltsopensource.core.logger.LoggerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import com.github.ltsopensource.core.spi.ServiceLoader;
 import com.github.ltsopensource.ec.EventInfo;
 import com.github.ltsopensource.remoting.AsyncCallback;
@@ -37,7 +37,7 @@ public class RemotingClientDelegate {
     public RemotingClientDelegate(RemotingClient remotingClient, AppContext appContext) {
         this.remotingClient = remotingClient;
         this.appContext = appContext;
-        this.jobTrackers = new CopyOnWriteArrayList<Node>();
+        this.jobTrackers = new CopyOnWriteArrayList<>();
     }
 
     private Node getJobTrackerNode() throws JobTrackerNotFoundException {

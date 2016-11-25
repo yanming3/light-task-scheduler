@@ -2,8 +2,8 @@ package com.github.ltsopensource.core.failstore;
 
 import com.github.ltsopensource.core.commons.file.FileLock;
 import com.github.ltsopensource.core.commons.file.FileUtils;
-import com.github.ltsopensource.core.logger.Logger;
-import com.github.ltsopensource.core.logger.LoggerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.IOException;

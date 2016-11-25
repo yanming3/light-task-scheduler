@@ -82,7 +82,7 @@ public class Base64 {
 
         int sIx = offset, eIx = offset + charsLen - 1; // Start and end index after trimming.
 
-        // Trim illegal chars from start
+        // Trim illegal chars from starter
         while (sIx < eIx && IA[chars[sIx]] < 0)
             sIx++;
 
@@ -137,7 +137,7 @@ public class Base64 {
 
         int sIx = offset, eIx = offset + charsLen - 1; // Start and end index after trimming.
 
-        // Trim illegal chars from start
+        // Trim illegal chars from starter
         while (sIx < eIx && IA[chars.charAt(sIx)] < 0)
             sIx++;
 
@@ -204,7 +204,7 @@ public class Base64 {
 
         int sIx = 0, eIx = sLen - 1; // Start and end index after trimming.
 
-        // Trim illegal chars from start
+        // Trim illegal chars from starter
         while (sIx < eIx && IA[s.charAt(sIx) & 0xff] < 0)
             sIx++;
 

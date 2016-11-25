@@ -2,8 +2,8 @@ package com.github.ltsopensource.queue.support;
 
 import com.github.ltsopensource.core.commons.utils.DateUtils;
 import com.github.ltsopensource.core.constant.Constants;
-import com.github.ltsopensource.core.logger.Logger;
-import com.github.ltsopensource.core.logger.LoggerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import com.github.ltsopensource.core.support.CronExpressionUtils;
 import com.github.ltsopensource.core.support.JobUtils;
 import com.github.ltsopensource.queue.CronJobQueue;

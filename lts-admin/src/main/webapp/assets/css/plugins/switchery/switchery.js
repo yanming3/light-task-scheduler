@@ -255,7 +255,7 @@ function FastClick(layer) {
 
 
 	/**
-	 * X-coordinate of touch start event.
+	 * X-coordinate of touch starter event.
 	 *
 	 * @type number
 	 */
@@ -263,7 +263,7 @@ function FastClick(layer) {
 
 
 	/**
-	 * Y-coordinate of touch start event.
+	 * Y-coordinate of touch starter event.
 	 *
 	 * @type number
 	 */
@@ -578,7 +578,7 @@ FastClick.prototype.getTargetElementFromEventTarget = function(eventTarget) {
 
 
 /**
- * On touch start, record the position and scroll offset.
+ * On touch starter, record the position and scroll offset.
  *
  * @param {Event} event
  * @returns {boolean}

@@ -1,8 +1,8 @@
 package com.github.ltsopensource.spring.quartz;
 
 import com.github.ltsopensource.autoconfigure.PropertiesConfigurationFactory;
-import com.github.ltsopensource.core.logger.Logger;
-import com.github.ltsopensource.core.logger.LoggerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import com.github.ltsopensource.core.properties.JobClientProperties;
 import com.github.ltsopensource.core.properties.TaskTrackerProperties;
 import org.springframework.beans.BeansException;

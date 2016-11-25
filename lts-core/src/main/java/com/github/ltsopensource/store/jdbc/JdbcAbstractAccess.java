@@ -39,10 +39,10 @@ public abstract class JdbcAbstractAccess {
     }
 
     protected void createTable(String sql) throws JdbcException {
-        try {
+       /* try {
             getSqlTemplate().createTable(sql);
         } catch (Exception e) {
             throw new JdbcException("Create table error, sql=" + sql, e);
-        }
+        }*/
     }
 }

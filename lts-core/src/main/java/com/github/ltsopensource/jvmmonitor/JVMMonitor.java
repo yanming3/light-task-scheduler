@@ -1,13 +1,13 @@
 package com.github.ltsopensource.jvmmonitor;
 
 import com.github.ltsopensource.core.commons.utils.CollectionUtils;
-import com.github.ltsopensource.core.logger.Logger;
-import com.github.ltsopensource.core.logger.LoggerFactory;
 import com.github.ltsopensource.core.support.CrossClassLoader;
 import com.github.ltsopensource.jvmmonitor.mbean.JVMGC;
 import com.github.ltsopensource.jvmmonitor.mbean.JVMInfo;
 import com.github.ltsopensource.jvmmonitor.mbean.JVMMemory;
 import com.github.ltsopensource.jvmmonitor.mbean.JVMThread;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.management.MBeanServer;
 import javax.management.ObjectName;

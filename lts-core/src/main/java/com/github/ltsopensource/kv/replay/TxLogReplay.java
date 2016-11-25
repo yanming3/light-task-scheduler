@@ -1,6 +1,6 @@
 package com.github.ltsopensource.kv.replay;
 
-import com.github.ltsopensource.core.logger.Logger;
+import org.slf4j.Logger;
 import com.github.ltsopensource.core.support.SystemClock;
 import com.github.ltsopensource.kv.*;
 import com.github.ltsopensource.kv.cache.DataCache;
@@ -33,7 +33,7 @@ public class TxLogReplay<K, V> {
 
     public void replay(StoreTxLogPosition startPosition) {
 
-        LOGGER.info("start to replay txLog ...");
+        LOGGER.info("starter to replay txLog ...");
 
         Cursor<StoreTxLogCursorEntry<K, V>> cursor = storeTxLogEngine.cursor(startPosition);
 

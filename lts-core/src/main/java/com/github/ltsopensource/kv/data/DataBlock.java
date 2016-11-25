@@ -8,7 +8,7 @@ import com.github.ltsopensource.kv.DBException;
 import com.github.ltsopensource.kv.StoreConfig;
 import com.github.ltsopensource.kv.txlog.StoreTxLogPosition;
 import com.github.ltsopensource.core.json.JSON;
-import com.github.ltsopensource.core.logger.Logger;
+import org.slf4j.Logger;
 import com.github.ltsopensource.remoting.common.ServiceThread;
 
 import java.io.File;
@@ -204,7 +204,7 @@ public class DataBlock {
         aliveNum = fileHeader.getAliveNum().get();
 
         if (DataBlock.LOGGER.isDebugEnabled()) {
-            DataBlock.LOGGER.debug("flush Data start");
+            DataBlock.LOGGER.debug("flush Data starter");
         }
 
         synchronized (this) {

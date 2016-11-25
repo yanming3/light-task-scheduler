@@ -11,8 +11,8 @@ import com.github.ltsopensource.core.constant.Level;
 import com.github.ltsopensource.core.exception.RemotingSendException;
 import com.github.ltsopensource.core.factory.NamedThreadFactory;
 import com.github.ltsopensource.core.json.JSON;
-import com.github.ltsopensource.core.logger.Logger;
-import com.github.ltsopensource.core.logger.LoggerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import com.github.ltsopensource.core.protocol.JobProtos;
 import com.github.ltsopensource.core.protocol.command.JobAskRequest;
 import com.github.ltsopensource.core.protocol.command.JobAskResponse;
@@ -90,7 +90,7 @@ public class ExecutingDeadJobChecker {
             }
             LOGGER.info("Executing dead job checker started!");
         } catch (Throwable e) {
-            LOGGER.error("Executing dead job checker start failed!", e);
+            LOGGER.error("Executing dead job checker starter failed!", e);
         }
     }
 

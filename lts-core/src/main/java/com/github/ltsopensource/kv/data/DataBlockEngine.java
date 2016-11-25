@@ -4,7 +4,7 @@ import com.github.ltsopensource.core.commons.file.FileUtils;
 import com.github.ltsopensource.core.commons.io.UnsafeByteArrayInputStream;
 import com.github.ltsopensource.core.commons.io.UnsafeByteArrayOutputStream;
 import com.github.ltsopensource.core.json.TypeReference;
-import com.github.ltsopensource.core.logger.Logger;
+import org.slf4j.Logger;
 import com.github.ltsopensource.kv.CapacityNotEnoughException;
 import com.github.ltsopensource.kv.DB;
 import com.github.ltsopensource.kv.DBException;

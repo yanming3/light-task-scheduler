@@ -1,7 +1,7 @@
 package com.github.ltsopensource.kv.txlog;
 
 import com.github.ltsopensource.core.commons.file.FileUtils;
-import com.github.ltsopensource.core.logger.Logger;
+import org.slf4j.Logger;
 import com.github.ltsopensource.kv.*;
 
 import java.io.Closeable;
@@ -167,7 +167,7 @@ public class StoreTxLog implements Closeable {
     private void checkPoint() throws IOException {
 
         if (LOGGER.isDebugEnabled()) {
-            LOGGER.debug("checkpoint start");
+            LOGGER.debug("checkpoint starter");
         }
         // 先将内容都强制刷到磁盘,因为后面会写头部汇总信息
         if (fileLength != lastCheckPointLength) {

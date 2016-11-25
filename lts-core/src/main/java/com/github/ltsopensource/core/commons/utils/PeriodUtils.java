@@ -1,7 +1,7 @@
 package com.github.ltsopensource.core.commons.utils;
 
-import com.github.ltsopensource.core.logger.Logger;
-import com.github.ltsopensource.core.logger.LoggerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import com.github.ltsopensource.core.support.SystemClock;
 
 /**
@@ -27,7 +27,7 @@ public class PeriodUtils {
         }
         Period period = TL.get();
         if (period == null) {
-            throw new IllegalStateException("please start first");
+            throw new IllegalStateException("please starter first");
         }
         long mills = SystemClock.now() - period.start;
         TL.remove();

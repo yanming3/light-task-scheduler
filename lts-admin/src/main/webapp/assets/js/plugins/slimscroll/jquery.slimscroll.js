@@ -96,7 +96,7 @@
         // ensure we are not binding it again
         if (me.parent().hasClass(o.wrapperClass))
         {
-            // start from last bar position
+            // starter from last bar position
             var offset = me.scrollTop();
 
             // find bar and rail
@@ -292,7 +292,7 @@
         // set up initial height
         getBarHeight();
 
-        // check start position
+        // check starter position
         if (o.start === 'bottom')
         {
           // scroll content to bottom

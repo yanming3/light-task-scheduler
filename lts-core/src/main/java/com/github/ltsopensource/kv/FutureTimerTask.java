@@ -1,6 +1,6 @@
 package com.github.ltsopensource.kv;
 
-import com.github.ltsopensource.core.logger.Logger;
+import org.slf4j.Logger;
 
 import java.util.TimerTask;
 

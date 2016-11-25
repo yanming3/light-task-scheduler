@@ -4,7 +4,7 @@ import com.github.ltsopensource.core.factory.NamedThreadFactory;
 import com.github.ltsopensource.kv.DB;
 import com.github.ltsopensource.kv.StoreConfig;
 import com.github.ltsopensource.kv.serializer.StoreSerializer;
-import com.github.ltsopensource.core.logger.Logger;
+import org.slf4j.Logger;
 
 import java.io.IOException;
 import java.util.concurrent.Executors;

@@ -2,8 +2,8 @@ package com.github.ltsopensource.remoting;
 
 import com.github.ltsopensource.core.domain.Pair;
 import com.github.ltsopensource.core.factory.NamedThreadFactory;
-import com.github.ltsopensource.core.logger.Logger;
-import com.github.ltsopensource.core.logger.LoggerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import com.github.ltsopensource.remoting.exception.RemotingException;
 import com.github.ltsopensource.remoting.exception.RemotingSendRequestException;
 import com.github.ltsopensource.remoting.exception.RemotingTimeoutException;

@@ -1,7 +1,7 @@
 package com.github.ltsopensource.store.jdbc.builder;
 
-import com.github.ltsopensource.core.logger.Logger;
-import com.github.ltsopensource.core.logger.LoggerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import com.github.ltsopensource.store.jdbc.SQLFormatter;
 import com.github.ltsopensource.store.jdbc.SqlTemplate;
 import com.github.ltsopensource.store.jdbc.exception.JdbcException;

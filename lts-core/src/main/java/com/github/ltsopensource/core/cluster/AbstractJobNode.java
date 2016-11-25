@@ -18,8 +18,6 @@ import com.github.ltsopensource.core.listener.MasterChangeListener;
 import com.github.ltsopensource.core.listener.MasterElectionListener;
 import com.github.ltsopensource.core.listener.NodeChangeListener;
 import com.github.ltsopensource.core.listener.SelfChangeListener;
-import com.github.ltsopensource.core.logger.Logger;
-import com.github.ltsopensource.core.logger.LoggerFactory;
 import com.github.ltsopensource.core.protocol.command.CommandBodyWrapper;
 import com.github.ltsopensource.core.registry.*;
 import com.github.ltsopensource.core.spi.ServiceLoader;
@@ -28,6 +26,8 @@ import com.github.ltsopensource.core.support.ConfigValidator;
 import com.github.ltsopensource.ec.EventCenter;
 import com.github.ltsopensource.ec.EventInfo;
 import com.github.ltsopensource.remoting.serialize.AdaptiveSerializable;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,8 +55,8 @@ public abstract class AbstractJobNode<T extends Node, Context extends AppContext
         config = JobNodeConfigFactory.getDefaultConfig();
         config.setNodeType(node.getNodeType());
         appContext.setConfig(config);
-        nodeChangeListeners = new ArrayList<NodeChangeListener>();
-        masterChangeListeners = new ArrayList<MasterChangeListener>();
+        nodeChangeListeners = new ArrayList<>();
+        masterChangeListeners = new ArrayList<>();
     }
 
     final public void start() {
@@ -199,11 +199,6 @@ public abstract class AbstractJobNode<T extends Node, Context extends AppContext
             JSONFactory.setJSONAdapter(ltsJson);
         }
 
-        // 设置logger
-        String logger = config.getParameter(ExtConfig.LTS_LOGGER);
-        if (StringUtils.isNotEmpty(logger)) {
-            LoggerFactory.setLoggerAdapter(logger);
-        }
     }
 
     private void initRegistry() {

@@ -1,8 +1,8 @@
 package com.github.ltsopensource.core.monitor;
 
 import com.github.ltsopensource.core.domain.monitor.MData;
-import com.github.ltsopensource.core.logger.Logger;
-import com.github.ltsopensource.core.logger.LoggerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.junit.Test;
 
 import java.util.ArrayList;

@@ -1,7 +1,7 @@
 package com.github.ltsopensource.redis;
 
-import com.github.ltsopensource.core.logger.Logger;
-import com.github.ltsopensource.core.logger.LoggerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import redis.clients.jedis.JedisPubSub;
 
 public class Subscriber extends JedisPubSub {

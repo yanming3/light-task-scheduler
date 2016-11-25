@@ -1,7 +1,7 @@
 package com.github.ltsopensource.nio.processor;
 
-import com.github.ltsopensource.core.logger.Logger;
-import com.github.ltsopensource.core.logger.LoggerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import com.github.ltsopensource.nio.NioException;
 import com.github.ltsopensource.nio.channel.ChannelInitializer;
 import com.github.ltsopensource.nio.channel.NioChannel;

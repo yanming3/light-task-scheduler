@@ -1,7 +1,7 @@
 package com.github.ltsopensource.spring.quartz;
 
-import com.github.ltsopensource.core.logger.Logger;
-import com.github.ltsopensource.core.logger.LoggerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import com.github.ltsopensource.spring.quartz.invoke.JobDetailJobExecution;
 import com.github.ltsopensource.spring.quartz.invoke.MethodInvokeJobExecution;
 import org.quartz.Job;

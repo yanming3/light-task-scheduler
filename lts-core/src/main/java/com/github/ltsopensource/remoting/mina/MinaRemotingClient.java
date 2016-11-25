@@ -43,7 +43,7 @@ public class MinaRemotingClient extends AbstractRemotingClient {
             cfg.setWriterIdleTime(remotingClientConfig.getWriterIdleTimeSeconds());
             cfg.setBothIdleTime(remotingClientConfig.getClientChannelMaxIdleTimeSeconds());
         } catch (Exception e) {
-            throw new RemotingException("Mina Client start error", e);
+            throw new RemotingException("Mina Client starter error", e);
         }
     }
 

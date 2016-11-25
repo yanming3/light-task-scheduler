@@ -6,8 +6,8 @@ import com.github.ltsopensource.core.commons.utils.DateUtils;
 import com.github.ltsopensource.core.constant.ExtConfig;
 import com.github.ltsopensource.core.exception.LtsRuntimeException;
 import com.github.ltsopensource.core.factory.NamedThreadFactory;
-import com.github.ltsopensource.core.logger.Logger;
-import com.github.ltsopensource.core.logger.LoggerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import com.github.ltsopensource.core.support.NodeShutdownHook;
 import com.github.ltsopensource.jobtracker.domain.JobTrackerAppContext;
 import com.github.ltsopensource.queue.domain.JobPo;
@@ -94,7 +94,7 @@ public class NonRelyOnPrevCycleJobScheduler {
 
     private void schedule() {
         if (LOGGER.isDebugEnabled()) {
-            LOGGER.debug("========= Scheduler start =========");
+            LOGGER.debug("========= Scheduler starter =========");
         }
 
         Date now = new Date();

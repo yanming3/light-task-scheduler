@@ -1,8 +1,6 @@
 package com.github.ltsopensource.core.commons.utils;
 
 
-import com.github.ltsopensource.core.logger.support.FormattingTuple;
-import com.github.ltsopensource.core.logger.support.MessageFormatter;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;

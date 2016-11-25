@@ -2,8 +2,8 @@ package com.github.ltsopensource.remoting;
 
 import com.github.ltsopensource.core.commons.utils.StringUtils;
 import com.github.ltsopensource.core.domain.Pair;
-import com.github.ltsopensource.core.logger.Logger;
-import com.github.ltsopensource.core.logger.LoggerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import com.github.ltsopensource.core.support.SystemClock;
 import com.github.ltsopensource.remoting.codec.Codec;
 import com.github.ltsopensource.remoting.codec.DefaultCodec;

@@ -3,8 +3,8 @@ package com.github.ltsopensource.core.registry;
 import com.github.ltsopensource.core.cluster.Node;
 import com.github.ltsopensource.core.cluster.NodeType;
 import com.github.ltsopensource.core.commons.utils.StringUtils;
-import com.github.ltsopensource.core.logger.Logger;
-import com.github.ltsopensource.core.logger.LoggerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author Robert HG (254963746@qq.com) on 5/11/15.

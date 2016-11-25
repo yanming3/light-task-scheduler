@@ -10,8 +10,8 @@ import com.github.ltsopensource.core.commons.utils.StringUtils;
 import com.github.ltsopensource.core.domain.monitor.*;
 import com.github.ltsopensource.core.json.JSON;
 import com.github.ltsopensource.core.json.TypeReference;
-import com.github.ltsopensource.core.logger.Logger;
-import com.github.ltsopensource.core.logger.LoggerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import com.github.ltsopensource.monitor.MonitorAppContext;
 
 import java.util.List;

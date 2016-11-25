@@ -2,8 +2,8 @@ package com.github.ltsopensource.zookeeper.lts;
 
 import com.github.ltsopensource.core.cluster.Config;
 import com.github.ltsopensource.core.commons.utils.CollectionUtils;
-import com.github.ltsopensource.core.logger.Logger;
-import com.github.ltsopensource.core.logger.LoggerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import com.github.ltsopensource.core.registry.NodeRegistryUtils;
 import com.github.ltsopensource.zookeeper.ChildListener;
 import com.github.ltsopensource.zookeeper.DataListener;
@@ -445,7 +445,7 @@ public class LtsZkClient extends AbstractZkClient<ChildListener, DataListener> i
             try {
                 conditionConnected.await(10000, TimeUnit.MILLISECONDS);
             } catch (InterruptedException e) {
-                LOGGER.error(e);
+                LOGGER.error("interrupted exception!",e);
             } finally {
                 lock.unlock();
             }

@@ -1,8 +1,8 @@
 package com.github.ltsopensource.remoting.serialize;
 
 import com.github.ltsopensource.core.constant.Constants;
-import com.github.ltsopensource.core.logger.Logger;
-import com.github.ltsopensource.core.logger.LoggerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import com.github.ltsopensource.core.spi.ServiceLoader;
 
 import java.util.HashMap;

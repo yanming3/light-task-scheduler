@@ -3,8 +3,8 @@ package com.github.ltsopensource.jobtracker.channel;
 import com.github.ltsopensource.core.cluster.NodeType;
 import com.github.ltsopensource.core.constant.Constants;
 import com.github.ltsopensource.core.factory.NamedThreadFactory;
-import com.github.ltsopensource.core.logger.Logger;
-import com.github.ltsopensource.core.logger.LoggerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import com.github.ltsopensource.core.support.SystemClock;
 
 import java.util.ArrayList;

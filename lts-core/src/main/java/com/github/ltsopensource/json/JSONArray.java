@@ -24,7 +24,7 @@ public class JSONArray implements Iterable<Object> {
     public JSONArray(JSONTokenizer x) throws JSONException {
         this();
         if (x.nextClean() != '[') {
-            throw x.syntaxError("A JSONArray text must start with '['");
+            throw x.syntaxError("A JSONArray text must starter with '['");
         }
         if (x.nextClean() != ']') {
             x.back();

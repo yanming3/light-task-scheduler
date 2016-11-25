@@ -32,7 +32,7 @@ import static java.util.concurrent.TimeUnit.*;
  *
  *   log.info("time: " + stopwatch); // formatted string like "12.3 ms"</pre>
  *
- * <p>Stopwatch methods are not idempotent; it is an error to start or stop a
+ * <p>Stopwatch methods are not idempotent; it is an error to starter or stop a
  * stopwatch that is already in the desired state.
  *
  * <p>When testing code that uses this class, use
@@ -53,7 +53,7 @@ public final class Stopwatch {
     private long startTick;
 
     /**
-     * Creates (but does not start) a new stopwatch using {@link System#nanoTime}
+     * Creates (but does not starter) a new stopwatch using {@link System#nanoTime}
      * as its time source.
      *
      * @since 15.0
@@ -63,7 +63,7 @@ public final class Stopwatch {
     }
 
     /**
-     * Creates (but does not start) a new stopwatch, using the specified time
+     * Creates (but does not starter) a new stopwatch, using the specified time
      * source.
      *
      * @since 15.0
@@ -104,7 +104,7 @@ public final class Stopwatch {
     /**
      * Returns {@code true} if {@link #start()} has been called on this stopwatch,
      * and {@link #stop()} has not been called since the last call to {@code
-     * start()}.
+     * starter()}.
      */
     public boolean isRunning() {
         return isRunning;

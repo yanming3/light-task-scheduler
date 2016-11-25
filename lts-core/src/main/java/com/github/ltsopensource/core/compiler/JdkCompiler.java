@@ -1,7 +1,7 @@
 package com.github.ltsopensource.core.compiler;
 
 import com.github.ltsopensource.core.commons.utils.ClassHelper;
-import com.github.ltsopensource.core.logger.LoggerFactory;
+import org.slf4j.LoggerFactory;
 
 import javax.tools.*;
 import java.io.*;

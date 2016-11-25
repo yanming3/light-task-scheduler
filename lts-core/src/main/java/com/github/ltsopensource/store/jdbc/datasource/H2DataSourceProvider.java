@@ -3,13 +3,12 @@ package com.github.ltsopensource.store.jdbc.datasource;
 import com.github.ltsopensource.core.cluster.Config;
 import com.github.ltsopensource.core.commons.utils.StringUtils;
 import com.github.ltsopensource.core.constant.ExtConfig;
-import org.h2.jdbcx.JdbcDataSource;
 
 import javax.sql.DataSource;
 import java.util.concurrent.ConcurrentHashMap;
-
+import org.h2.jdbcx.JdbcDataSource;
 /**
- * @author Robert HG (254963746@qq.com) on 10/24/14.
+ * Created by allan on 16/11/24.
  */
 public class H2DataSourceProvider implements DataSourceProvider {
 

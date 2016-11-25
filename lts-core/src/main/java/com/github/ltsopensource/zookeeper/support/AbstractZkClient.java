@@ -1,8 +1,8 @@
 package com.github.ltsopensource.zookeeper.support;
 
 
-import com.github.ltsopensource.core.logger.Logger;
-import com.github.ltsopensource.core.logger.LoggerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import com.github.ltsopensource.zookeeper.ChildListener;
 import com.github.ltsopensource.zookeeper.DataListener;
 import com.github.ltsopensource.zookeeper.StateListener;

@@ -54,26 +54,6 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>commons-logging</groupId>
-            <artifactId>commons-logging-api</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-all</artifactId>
             <scope>provided</scope>
@@ -111,11 +91,6 @@
         <dependency>
             <groupId>org.rocksdb</groupId>
             <artifactId>rocksdbjni</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -219,6 +194,7 @@
             </plugin>
             <plugin>
                 <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.10.4</version>
                 <executions>
                     <execution>
                         <id>attach-javadoc</id>
@@ -268,23 +244,30 @@
                             <transformers>
                                 <transformer
                                         implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
-                                    <resource>META-INF/lts/internal/com.github.ltsopensource.biz.logger.JobLoggerFactory</resource>
+                                    <resource>
+                                        META-INF/lts/internal/com.github.ltsopensource.biz.logger.JobLoggerFactory
+                                    </resource>
                                 </transformer>
                                 <transformer
                                         implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
-                                    <resource>META-INF/lts/internal/com.github.ltsopensource.core.failstore.FailStoreFactory</resource>
+                                    <resource>
+                                        META-INF/lts/internal/com.github.ltsopensource.core.failstore.FailStoreFactory
+                                    </resource>
                                 </transformer>
                                 <transformer
                                         implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
-                                    <resource>META-INF/lts/internal/com.github.ltsopensource.core.json.JSONAdapter</resource>
+                                    <resource>META-INF/lts/internal/com.github.ltsopensource.core.json.JSONAdapter
+                                    </resource>
                                 </transformer>
                                 <transformer
                                         implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
-                                    <resource>META-INF/lts/internal/com.github.ltsopensource.core.loadbalance.LoadBalance</resource>
+                                    <resource>
+                                        META-INF/lts/internal/com.github.ltsopensource.core.loadbalance.LoadBalance
+                                    </resource>
                                 </transformer>
                                 <transformer
                                         implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
-                                    <resource>META-INF/lts/internal/com.github.ltsopensource.core.logger.LoggerAdapter</resource>
+                                    <resource>META-INF/lts/internal/org.slf4j.LoggerAdapter</resource>
                                 </transformer>
                                 <transformer
                                         implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
@@ -292,35 +275,50 @@
                                 </transformer>
                                 <transformer
                                         implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
-                                    <resource>META-INF/lts/internal/com.github.ltsopensource.queue.JobQueueFactory</resource>
+                                    <resource>META-INF/lts/internal/com.github.ltsopensource.queue.JobQueueFactory
+                                    </resource>
                                 </transformer>
                                 <transformer
                                         implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
-                                    <resource>META-INF/lts/internal/com.github.ltsopensource.remoting.RemotingTransporter</resource>
+                                    <resource>
+                                        META-INF/lts/internal/com.github.ltsopensource.remoting.RemotingTransporter
+                                    </resource>
                                 </transformer>
                                 <transformer
                                         implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
-                                    <resource>META-INF/lts/internal/com.github.ltsopensource.remoting.serialize.RemotingSerializable</resource>
+                                    <resource>
+                                        META-INF/lts/internal/com.github.ltsopensource.remoting.serialize.RemotingSerializable
+                                    </resource>
                                 </transformer>
                                 <transformer
                                         implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
-                                    <resource>META-INF/lts/internal/com.github.ltsopensource.store.jdbc.datasource.DataSourceProvider</resource>
+                                    <resource>
+                                        META-INF/lts/internal/com.github.ltsopensource.store.jdbc.datasource.DataSourceProvider
+                                    </resource>
                                 </transformer>
                                 <transformer
                                         implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
-                                    <resource>META-INF/lts/internal/com.github.ltsopensource.zookeeper.ZookeeperTransporter</resource>
+                                    <resource>
+                                        META-INF/lts/internal/com.github.ltsopensource.zookeeper.ZookeeperTransporter
+                                    </resource>
                                 </transformer>
                                 <transformer
                                         implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
-                                    <resource>META-INF/lts/internal/com.github.ltsopensource.monitor.access.MonitorAccessFactory</resource>
+                                    <resource>
+                                        META-INF/lts/internal/com.github.ltsopensource.monitor.access.MonitorAccessFactory
+                                    </resource>
                                 </transformer>
                                 <transformer
                                         implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
-                                    <resource>META-INF/lts/internal/com.github.ltsopensource.admin.access.BackendAccessFactory</resource>
+                                    <resource>
+                                        META-INF/lts/internal/com.github.ltsopensource.admin.access.BackendAccessFactory
+                                    </resource>
                                 </transformer>
                                 <transformer
                                         implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
-                                    <resource>META-INF/lts/internal/com.github.ltsopensource.jobtracker.complete.retry.JobRetryTimeGenerator</resource>
+                                    <resource>
+                                        META-INF/lts/internal/com.github.ltsopensource.jobtracker.complete.retry.JobRetryTimeGenerator
+                                    </resource>
                                 </transformer>
                             </transformers>
                         </configuration>

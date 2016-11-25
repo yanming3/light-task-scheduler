@@ -8,8 +8,8 @@ import com.github.ltsopensource.core.commons.utils.Callable;
 import com.github.ltsopensource.core.commons.utils.DateUtils;
 import com.github.ltsopensource.core.commons.utils.QuietUtils;
 import com.github.ltsopensource.core.factory.NamedThreadFactory;
-import com.github.ltsopensource.core.logger.Logger;
-import com.github.ltsopensource.core.logger.LoggerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -47,7 +47,7 @@ public class LtsAdminDataCleaner implements InitializingBean {
                     }
                 }
             }, 1, 24, TimeUnit.HOURS);
-            LOGGER.info("LtsAdminDataCleaner start succeed ");
+            LOGGER.info("LtsAdminDataCleaner starter succeed ");
         }
     }
 

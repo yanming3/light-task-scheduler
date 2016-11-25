@@ -3,8 +3,8 @@ package com.github.ltsopensource.jobtracker.support.checker;
 import com.github.ltsopensource.core.commons.utils.CollectionUtils;
 import com.github.ltsopensource.core.domain.JobRunResult;
 import com.github.ltsopensource.core.factory.NamedThreadFactory;
-import com.github.ltsopensource.core.logger.Logger;
-import com.github.ltsopensource.core.logger.LoggerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import com.github.ltsopensource.jobtracker.domain.JobClientNode;
 import com.github.ltsopensource.jobtracker.domain.JobTrackerAppContext;
 import com.github.ltsopensource.jobtracker.support.ClientNotifier;
@@ -74,7 +74,7 @@ public class FeedbackJobSendChecker {
             LOGGER.info("Feedback job checker started!");
 
         } catch (Throwable t) {
-            LOGGER.error("Feedback job checker start failed!", t);
+            LOGGER.error("Feedback job checker starter failed!", t);
         }
     }
 

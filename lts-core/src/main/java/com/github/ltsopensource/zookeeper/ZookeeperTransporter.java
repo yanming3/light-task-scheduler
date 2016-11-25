@@ -5,7 +5,7 @@ import com.github.ltsopensource.core.cluster.Config;
 import com.github.ltsopensource.core.spi.SPI;
 import com.github.ltsopensource.core.constant.ExtConfig;
 
-@SPI(key = ExtConfig.ZK_CLIENT_KEY, dftValue = "zkclient")
+@SPI(key = ExtConfig.ZK_CLIENT_KEY, dftValue = "curator")
 public interface ZookeeperTransporter {
 
     ZkClient connect(Config config);

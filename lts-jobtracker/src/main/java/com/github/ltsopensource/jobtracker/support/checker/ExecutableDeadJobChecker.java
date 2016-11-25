@@ -3,8 +3,8 @@ package com.github.ltsopensource.jobtracker.support.checker;
 import com.github.ltsopensource.core.commons.utils.CollectionUtils;
 import com.github.ltsopensource.core.factory.NamedThreadFactory;
 import com.github.ltsopensource.core.json.JSON;
-import com.github.ltsopensource.core.logger.Logger;
-import com.github.ltsopensource.core.logger.LoggerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import com.github.ltsopensource.core.support.SystemClock;
 import com.github.ltsopensource.jobtracker.domain.JobTrackerAppContext;
 import com.github.ltsopensource.queue.domain.JobPo;
@@ -60,7 +60,7 @@ public class ExecutableDeadJobChecker {
             }
             LOGGER.info("Executable dead job checker started!");
         } catch (Throwable t) {
-            LOGGER.info("Executable dead job checker start failed!");
+            LOGGER.info("Executable dead job checker starter failed!");
         }
     }
 

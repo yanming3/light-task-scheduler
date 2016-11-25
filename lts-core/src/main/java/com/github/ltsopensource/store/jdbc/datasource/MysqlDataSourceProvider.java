@@ -5,8 +5,8 @@ import com.github.ltsopensource.core.cluster.Config;
 import com.github.ltsopensource.core.commons.utils.PrimitiveTypeUtils;
 import com.github.ltsopensource.core.commons.utils.StringUtils;
 import com.github.ltsopensource.core.constant.ExtConfig;
-import com.github.ltsopensource.core.logger.Logger;
-import com.github.ltsopensource.core.logger.LoggerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.sql.DataSource;
 import java.lang.reflect.Method;

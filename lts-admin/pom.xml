@@ -8,27 +8,149 @@
         <version>1.7.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <packaging>war</packaging>
     <artifactId>lts-admin</artifactId>
-
+    <packaging>jar</packaging>
     <build>
         <plugins>
             <plugin>
-                <groupId>org.apache.tomcat.maven</groupId>
-                <artifactId>tomcat7-maven-plugin</artifactId>
-                <version>2.2</version>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>appassembler-maven-plugin</artifactId>
+                <version>1.7</version>
                 <configuration>
-                    <path>/</path>
-                    <port>8081</port>
-                    <server>tomcat</server>
-                    <warFile>lts-admin.war</warFile>
-                    <uriEncoding>utf-8</uriEncoding>
+                    <configurationDirectory>conf</configurationDirectory>
+                    <includeConfigurationDirectoryInClasspath>true</includeConfigurationDirectoryInClasspath>
+                    <repositoryLayout>flat</repositoryLayout>
+                    <useWildcardClassPath>true</useWildcardClassPath>
+                    <daemons>
+                        <daemon>
+                            <id>admin</id>
+                            <mainClass>com.github.ltsopensource.admin.AdminStarter</mainClass>
+                            <commandLineArguments>
+                                <commandLineArgument>start</commandLineArgument>
+                            </commandLineArguments>
+                            <platforms>
+                                <platform>jsw</platform>
+                            </platforms>
+                            <jvmSettings>
+                                <!-- 启动内存配置 -->
+                                <initialMemorySize>2048M</initialMemorySize>
+                                <maxMemorySize>2048M</maxMemorySize>
+                                <maxStackSize>128</maxStackSize>
+                                <systemProperties>
+                                    <systemProperty>log4j.configurationFile="./conf/log4j2.xml"</systemProperty>
+                                </systemProperties>
+                                <extraArguments>
+                                    <extraArgument>-server</extraArgument>
+                                    <extraArgument>-agentlib:jdwp=transport=dt_socket,address=36888,server=y,suspend=n</extraArgument>
+                                    <extraArgument>-XX:NewRatio=1</extraArgument>
+                                    <extraArgument>-XX:TargetSurvivorRatio=75</extraArgument>
+                                    <extraArgument>-XX:+UseConcMarkSweepGC</extraArgument>
+                                    <extraArgument>-XX:-PrintGCTimeStamps</extraArgument>
+                                    <extraArgument>-XX:+PrintGCDetails</extraArgument>
+                                    <extraArgument>-XX:+PrintTenuringDistribution</extraArgument>
+                                    <extraArgument>-XX:NewRatio=1</extraArgument>
+                                    <extraArgument>-XX:TargetSurvivorRatio=75</extraArgument>
+                                    <extraArgument>-Xloggc:./logs/gc.log</extraArgument>
+                                    <extraArgument>-XX:+UseGCLogFileRotation</extraArgument>
+                                    <extraArgument>-XX:GCLogFileSize=10M</extraArgument>
+                                    <extraArgument>-XX:NumberOfGCLogFiles=60</extraArgument>
+                                </extraArguments>
+                            </jvmSettings>
+                            <generatorConfigurations>
+                                <generatorConfiguration>
+                                    <generator>jsw</generator>
+                                    <includes>
+                                        <include>linux-x86-64</include>
+                                    </includes>
+
+                                    <configuration>
+                                        <property>
+                                            <name>configuration.directory.in.classpath.first</name>
+                                            <value>conf</value>
+                                        </property>
+                                        <property>
+                                            <name>wrapper.ping.timeout</name>
+                                            <value>120</value>
+                                        </property>
+                                        <property>
+                                            <name>set.default.REPO_DIR</name>
+                                            <value>lib</value>
+                                        </property>
+                                        <property>
+                                            <name>wrapper.logfile</name>
+                                            <value>logs/wrapper.log</value>
+                                        </property>
+                                    </configuration>
+
+                                </generatorConfiguration>
+                            </generatorConfigurations>
+                        </daemon>
+
+                    </daemons>
                 </configuration>
+                <executions>
+                    <execution>
+                        <id>generate-jsw</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>generate-daemons</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <descriptors>
+                        <descriptor>assembly.xml</descriptor>
+                    </descriptors>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
 
     <dependencies>
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-jasper</artifactId>
+            <version>7.0.52</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-core</artifactId>
+            <version>7.0.52</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-el</artifactId>
+            <version>7.0.52</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-logging-juli</artifactId>
+            <version>7.0.52</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-logging-log4j</artifactId>
+            <version>7.0.52</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-dbcp</artifactId>
+            <version>7.0.52</version>
+        </dependency>
+
         <dependency>
             <groupId>com.github.ltsopensource</groupId>
             <artifactId>lts-core</artifactId>
@@ -39,15 +161,6 @@
             <artifactId>lts-monitor</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
-        <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.github.sgroschupf</groupId>
-            <artifactId>zkclient</artifactId>
-        </dependency>
-
         <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjrt</artifactId>
@@ -62,6 +175,12 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
             <version>${springframework.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
@@ -139,10 +258,6 @@
             <artifactId>jedis</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-        </dependency>
-        <dependency>
             <groupId>org.apache.velocity</groupId>
             <artifactId>velocity</artifactId>
             <version>1.7</version>
@@ -214,5 +329,96 @@
             <groupId>org.mongodb</groupId>
             <artifactId>mongo-java-driver</artifactId>
         </dependency>
+
+        <!--log4j2 begin-->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j-impl</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-1.2-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.lmax</groupId>
+            <artifactId>disruptor</artifactId>
+        </dependency>
+        <!--log4j2 end-->
+
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.zookeeper</groupId>
+            <artifactId>zookeeper</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.curator</groupId>
+            <artifactId>curator-recipes</artifactId>
+        </dependency>
     </dependencies>
+
+    <profiles>
+        <profile>
+            <id>local</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <env>development</env>
+            </properties>
+        </profile>
+        <profile>
+            <id>testing</id>
+            <properties>
+                <env>testing</env>
+            </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-jar-plugin</artifactId>
+                        <configuration>
+                            <excludes>
+                                <exclude>**/log4j2.xml</exclude>
+                                <exclude>**/lts-admin.cfg</exclude>
+                                <exclude>**/lts-monitor.cfg</exclude>
+                            </excludes>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>production</id>
+            <properties>
+                <env>testing</env>
+            </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-jar-plugin</artifactId>
+                        <configuration>
+                            <excludes>
+                                <exclude>**/log4j2.xml</exclude>
+                                <exclude>**/lts-admin.cfg</exclude>
+                                <exclude>**/lts-monitor.cfg</exclude>
+                            </excludes>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>

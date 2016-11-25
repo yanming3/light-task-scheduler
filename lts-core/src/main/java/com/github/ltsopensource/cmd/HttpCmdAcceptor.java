@@ -2,8 +2,8 @@ package com.github.ltsopensource.cmd;
 
 import com.github.ltsopensource.core.constant.Constants;
 import com.github.ltsopensource.core.factory.NamedThreadFactory;
-import com.github.ltsopensource.core.logger.Logger;
-import com.github.ltsopensource.core.logger.LoggerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -72,7 +72,7 @@ public class HttpCmdAcceptor {
         // 启动线程
         thread.start();
 
-        LOGGER.info("HttpCmdAcceptor start succeed ");
+        LOGGER.info("HttpCmdAcceptor starter succeed ");
     }
 
     public void stop() {

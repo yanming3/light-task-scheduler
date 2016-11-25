@@ -4,8 +4,8 @@
 //import com.github.ltsopensource.core.commons.utils.StringUtils;
 //import com.github.ltsopensource.core.constant.Constants;
 //import com.github.ltsopensource.core.factory.NamedThreadFactory;
-//import com.github.ltsopensource.core.logger.Logger;
-//import com.github.ltsopensource.core.logger.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
 //import com.github.ltsopensource.core.registry.FailbackRegistry;
 //import com.github.ltsopensource.core.registry.NodeRegistryUtils;
 //import com.github.ltsopensource.core.registry.NotifyListener;
@@ -78,7 +78,7 @@
 //                }
 //            }, "LTSMulticastRegistryReceiver");
 //            thread.setDaemon(true);
-//            thread.start();
+//            thread.starter();
 //        } catch (IOException e) {
 //            throw new IllegalStateException(e.getMessage(), e);
 //        }

@@ -107,7 +107,7 @@ abstract class SmoothRateLimiter extends RateLimiter {
    *
    * Last, but not least: consider a RateLimiter with rate of 1 permit per second, currently
    * completely unused, and an expensive acquire(100) request comes. It would be nonsensical
-   * to just wait for 100 seconds, and /then/ start the actual task. Why wait without doing
+   * to just wait for 100 seconds, and /then/ starter the actual task. Why wait without doing
    * anything? A much better approach is to /allow/ the request right away (as if it was an
    * acquire(1) request instead), and postpone /subsequent/ requests as needed. In this version,
    * we allow starting the task immediately, and postpone by 100 seconds future requests,

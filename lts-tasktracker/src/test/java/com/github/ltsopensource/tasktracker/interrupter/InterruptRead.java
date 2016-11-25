@@ -82,7 +82,7 @@ public class InterruptRead extends InterruptSupport {
             public void run() {
                 long start = System.currentTimeMillis();
                 try {
-                    System.out.println("InterruptRead start!");
+                    System.out.println("InterruptRead starter!");
                     test.execute();
                 } catch (InterruptedException e) {
                     System.out.println("InterruptRead end! cost time : " + (System.currentTimeMillis() - start));

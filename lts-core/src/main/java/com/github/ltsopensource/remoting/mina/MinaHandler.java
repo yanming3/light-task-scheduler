@@ -1,7 +1,7 @@
 package com.github.ltsopensource.remoting.mina;
 
-import com.github.ltsopensource.core.logger.Logger;
-import com.github.ltsopensource.core.logger.LoggerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import com.github.ltsopensource.remoting.AbstractRemoting;
 import com.github.ltsopensource.remoting.Channel;
 import com.github.ltsopensource.remoting.RemotingEvent;

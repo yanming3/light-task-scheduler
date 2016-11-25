@@ -6,8 +6,8 @@ import com.github.ltsopensource.core.cluster.NodeType;
 import com.github.ltsopensource.core.constant.ExtConfig;
 import com.github.ltsopensource.core.domain.monitor.MData;
 import com.github.ltsopensource.core.factory.NamedThreadFactory;
-import com.github.ltsopensource.core.logger.Logger;
-import com.github.ltsopensource.core.logger.LoggerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import com.github.ltsopensource.jvmmonitor.JVMMonitor;
 
 import java.util.concurrent.Executors;
@@ -46,11 +46,11 @@ public abstract class AbstractMStatReporter implements MStatReporter {
                 if (start.compareAndSet(false, true)) {
                     scheduledFuture = executor.scheduleWithFixedDelay(
                             new MStatReportWorker(appContext, this), 1, 1, TimeUnit.SECONDS);
-                    LOGGER.info("MStatReporter start succeed.");
+                    LOGGER.info("MStatReporter starter succeed.");
                 }
             }
         } catch (Exception e) {
-            LOGGER.error("MStatReporter start failed.", e);
+            LOGGER.error("MStatReporter starter failed.", e);
         }
     }
 

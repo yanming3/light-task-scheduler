@@ -33,7 +33,7 @@ public class LTSSpringConfig implements ApplicationContextAware {
         JobClientFactoryBean factoryBean = new JobClientFactoryBean();
         // TODO 设置一些配置 属性
         factoryBean.afterPropertiesSet();
-        // factoryBean.start();
+        // factoryBean.starter();
         return factoryBean.getObject();
     }
 
@@ -42,7 +42,7 @@ public class LTSSpringConfig implements ApplicationContextAware {
         JobTrackerFactoryBean factoryBean = new JobTrackerFactoryBean();
         // TODO 设置一些配置 属性
         factoryBean.afterPropertiesSet();
-        // factoryBean.start();
+        // factoryBean.starter();
         return factoryBean.getObject();
     }
 
@@ -52,7 +52,7 @@ public class LTSSpringConfig implements ApplicationContextAware {
         factoryBean.setApplicationContext(applicationContext);
         // TODO 设置一些配置 属性
         factoryBean.afterPropertiesSet();
-        // factoryBean.start();
+        // factoryBean.starter();
         return factoryBean.getObject();
     }
 

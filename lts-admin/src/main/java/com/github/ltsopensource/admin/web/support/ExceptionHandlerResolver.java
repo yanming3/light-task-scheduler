@@ -2,8 +2,8 @@ package com.github.ltsopensource.admin.web.support;
 
 import com.github.ltsopensource.admin.web.vo.RestfulResponse;
 import com.github.ltsopensource.core.json.JSON;
-import com.github.ltsopensource.core.logger.Logger;
-import com.github.ltsopensource.core.logger.LoggerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.servlet.HandlerExceptionResolver;
 import org.springframework.web.servlet.ModelAndView;
 

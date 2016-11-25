@@ -19,10 +19,6 @@
     <filter>
         <filter-name>loginAuthFilter</filter-name>
         <filter-class>com.github.ltsopensource.admin.web.filter.LoginAuthFilter</filter-class>
-        <init-param>
-            <param-name>auth-config</param-name>
-            <param-value>auth.cfg</param-value>
-        </init-param>
     </filter>
     <filter-mapping>
         <filter-name>loginAuthFilter</filter-name>
@@ -56,15 +52,5 @@
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
-
-    <!--<servlet>-->
-        <!--<servlet-name>H2Console</servlet-name>-->
-        <!--<servlet-class>com.github.ltsopensource.admin.web.support.H2ConsoleWebServlet</servlet-class>-->
-        <!--<load-on-startup>1</load-on-startup>-->
-    <!--</servlet>-->
-    <!--<servlet-mapping>-->
-        <!--<servlet-name>H2Console</servlet-name>-->
-        <!--<url-pattern>/h2/*</url-pattern>-->
-    <!--</servlet-mapping>-->
 
 </web-app>

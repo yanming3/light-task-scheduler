@@ -2,7 +2,7 @@ package com.github.ltsopensource.remoting.netty;
 
 import com.github.ltsopensource.core.AppContext;
 import com.github.ltsopensource.core.factory.NamedThreadFactory;
-import com.github.ltsopensource.core.logger.Logger;
+import org.slf4j.Logger;
 import com.github.ltsopensource.remoting.*;
 import com.github.ltsopensource.remoting.common.RemotingHelper;
 import com.github.ltsopensource.remoting.exception.RemotingException;
